@@ -33,7 +33,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.clear();
         mMap.addMarker(new MarkerOptions().position(userLocation).title(title));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation,12));
-
     }
 
     @Override
