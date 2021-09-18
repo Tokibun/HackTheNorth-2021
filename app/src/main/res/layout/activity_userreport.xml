@@ -12,7 +12,6 @@
         android:id="@+id/UserReportText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParents="true"
         android:text="User Report Page"
         android:textSize="30sp" />
 
