@@ -123,13 +123,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
                 return true;
             case R.id.hybrid_map:
-                startActivity(new Intent(this, HelpActivity.class));
+                startActivity(new Intent(this, UserReportActivity.class));
                 return true;
             case R.id.satellite_map:
-                mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-                return true;
-            case R.id.terrain_map:
-                mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+                startActivity(new Intent(this, HelpActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
