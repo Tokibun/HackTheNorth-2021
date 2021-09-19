@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CrimeX</string>
+    <string name="app_name">CrimeTracker</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
