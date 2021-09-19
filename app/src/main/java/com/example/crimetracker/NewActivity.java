@@ -40,7 +40,7 @@ public class NewActivity extends AppCompatActivity {
 
         News_Url = "https://newsapi.org/v2/top-headlines?sources=news-24&apiKey=0930eb567607412f8605463cf5ead22f";
 
-        new MainActivity.AsyncHttpTask().execute(News_Url);
+        new NewActivity.AsyncHttpTask().execute(News_Url);
     }
 
     public class AsyncHttpTask extends AsyncTask<String, Void, String>{

@@ -27,9 +27,4 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
     }
-
-    public static class AsyncHttpTask {
-        public void execute(String news_url) {
-        }
-    }
 }
