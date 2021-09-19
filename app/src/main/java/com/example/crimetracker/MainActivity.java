@@ -28,4 +28,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
     }
 
+    public static class AsyncHttpTask {
+        public void execute(String news_url) {
+        }
+    }
 }

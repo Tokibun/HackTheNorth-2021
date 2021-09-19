@@ -17,6 +17,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CrimeTracker">
         <activity
+            android:name=".NewActivity"
+            android:exported="true"
+            android:label="@string/title_activity_new"
+            android:theme="@style/Theme.CrimeTracker.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main">
             <intent-filter>
@@ -40,11 +45,13 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
     </application>
 
