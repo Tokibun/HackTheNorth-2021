@@ -32,7 +32,7 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps">
+            android:label="                             Map">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,12 +42,12 @@
 
         <activity
         android:name=".HelpActivity"
-        android:label="Help">
+        android:label="                           Report">
         </activity>
 
         <activity
             android:name=".UserReportActivity"
-            android:label="UserReport">
+            android:label="                            Feed">
         </activity>
     </application>
 
