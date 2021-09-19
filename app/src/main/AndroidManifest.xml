@@ -42,12 +42,12 @@
 
         <activity
         android:name=".HelpActivity"
-        android:label="                           Report">
+        android:label="                           Feed">
         </activity>
 
         <activity
             android:name=".UserReportActivity"
-            android:label="                            Feed">
+            android:label="                            Report">
         </activity>
     </application>
 
