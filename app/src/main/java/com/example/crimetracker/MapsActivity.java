@@ -73,7 +73,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             locationListener = new LocationListener() {
                 @Override
                 public void onLocationChanged(Location location) {
-//                    centreMapOnLocation(location,"Your Location");
+                    centreMapOnLocation(location,"Your Location");
                 }
 
                 @Override
@@ -100,5 +100,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
             }
         }
+
+
     }
+
+
 }
