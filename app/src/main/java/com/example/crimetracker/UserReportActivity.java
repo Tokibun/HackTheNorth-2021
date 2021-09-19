@@ -46,7 +46,7 @@ public class UserReportActivity extends AppCompatActivity {
 
                 try {
                     userReport = new UserReport(-1, UserInput1.getText().toString(), UserInput2.getText().toString(), Integer.parseInt(UserInput3.getText().toString()));
-                    Toast.makeText(UserReportActivity.this, userReport.toString(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(UserReportActivity.this, userReport.toString(), Toast.LENGTH_SHORT).show();
                 } catch (Exception e){
                     Toast.makeText(UserReportActivity.this, "Error adding crime", Toast.LENGTH_SHORT).show();
                 }
@@ -56,7 +56,7 @@ public class UserReportActivity extends AppCompatActivity {
                 if (userReport != null) {
                     success = database.addOne(userReport);
                 }
-                Toast.makeText(UserReportActivity.this, "Success= " + success, Toast.LENGTH_SHORT).show();
+                Toast.makeText(UserReportActivity.this, "Addition was successful", Toast.LENGTH_SHORT).show();
             }
         });
     }

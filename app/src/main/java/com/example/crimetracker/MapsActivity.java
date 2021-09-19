@@ -4,6 +4,9 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -26,14 +29,28 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.ArrayList;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     LocationManager locationManager;
     LocationListener locationListener;
+
+    ArrayList<LatLng>arrayList = new ArrayList<LatLng>();
+    LatLng NewCastle = new LatLng(32.916668, 151.750000);
+    LatLng sydney = new LatLng(-34, 151);
+    LatLng UofT = new LatLng(43.66266619705252, -79.39678298303954);
+    LatLng Toronto = new LatLng(43.1689889, -79.67974303);
+    LatLng Toronto2 = new LatLng(43.99705252, -79.954);
+
+
+
 
     public void centreMapOnLocation(Location location, String title){
 
@@ -66,12 +83,25 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        arrayList.add(sydney);
+        arrayList.add(NewCastle);
+        arrayList.add(UofT);
+        arrayList.add(Toronto);
+        arrayList.add(Toronto2);
+
     }
 
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
+        for (int i=0; i<arrayList.size();i++){
+            mMap.addMarker(new MarkerOptions().position(arrayList.get(i)).title("Marker").icon(bitmapDescriptorFromVector(getApplicationContext(), R.drawable.ic_emergency)));
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(15.0f));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(arrayList.get(i)));
+
+        }
 
         Intent intent = getIntent();
         if (intent.getIntExtra("Place Number",0) == 0 ){
@@ -110,6 +140,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
+    private BitmapDescriptor bitmapDescriptorFromVector(Context context, int vectorResId) {
+        Drawable vectorDrawable = ContextCompat.getDrawable(context, vectorResId);
+        vectorDrawable.setBounds(0,0,vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight());
+        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(),vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        vectorDrawable.draw(canvas);
+        return BitmapDescriptorFactory.fromBitmap(bitmap);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
